@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | The Daring Dishery - A Raven Coal Culinary Chronicle</title>
+    <style>
+        :root {
+            --raven-black: #1a1a1a;
+            --coal-dark: #2b2b2b;
+            --ember-orange: #cc5500;
+            --ash-gray: #8a8a8a;
+            --bone-white: #f0f0f0;
+            --silver-gleam: #c0c0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Garamond', 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: var(--raven-black);
+            color: var(--bone-white);
+            line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0,0 Q50,10 100,0 T100,100 Q50,90 0,100 T0,0 Z" fill="%232b2b2b" opacity="0.5"/></svg>');
+        }
+
+        header {
+            background: linear-gradient(to bottom, var(--raven-black), var(--coal-dark));
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 3px solid var(--ember-orange);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .logo h1 {
+            font-size: 4rem;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            color: var(--bone-white);
+            text-shadow: 2px 2px 4px #000, 0 0 10px var(--ember-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .logo .tagline {
+            font-style: italic;
+            color: var(--ash-gray);
+            font-size: 1.2rem;
+            letter-spacing: 0.1rem;
+        }
+
+        nav {
+            background-color: var(--coal-dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--ember-orange);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0 2rem;
+        }
+
+        nav a {
+            color: var(--silver-gleam);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--ember-orange);
+            border-bottom: 2px solid var(--ember-orange);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background-color: rgba(43, 43, 43, 0.8);
+            border-radius: 5px;
+            border-left: 4px solid var(--ember-orange);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--silver-gleam);
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--ash-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background-color: rgba(43, 43, 43, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            color: var(--ember-orange);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--ash-gray);
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--bone-white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background-color: var(--coal-dark);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-img {
+            width: 100%;
+            height: 300px;
+            background-color: var(--raven-black);
+            /* Placeholder for image */
+        }
+
+        .member-content {
+            padding: 1.5rem;
+        }
+
+        .member-content h3 {
+            color: var(--ember-orange);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .member-content .role {
+            color: var(--silver-gleam);
+            font-style: italic;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .member-content p {
+            color: var(--ash-gray);
+            font-size: 0.95rem;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .philosophy-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--coal-dark);
+            border-radius: 5px;
+            border-top: 3px solid var(--ember-orange);
+        }
+
+        .philosophy-item h3 {
+            color: var(--silver-gleam);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .philosophy-item p {
+            color: var(--ash-gray);
+            font-size: 0.95rem;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--ember-orange);
+        }
+
+        footer {
+            background-color: var(--coal-dark);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--ember-orange);
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            color: var(--ash-gray);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--ash-gray);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>The Daring Dishery</h1>
+            <p class="tagline">Culinary Alchemy Forged in Shadow and Flame</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms Of Service</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h1>Our Story</h1>
+            <p>From the embers of tradition to the flames of innovation, discover the philosophy and people behind The Daring Dishery.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>The Genesis of a Culinary Rebellion</h2>
+            <p>The Daring Dishery was born not in a brightly lit test kitchen, but in the liminal space between shadow and flame. Our founder, Morwenna Blackwood, spent years working in acclaimed restaurants across Europe, but always felt constrained by the conventions of fine dining. She yearned for something more primal, more honest, more connected to the elemental forces that transform raw ingredients into profound experiences.</p>
+            
+            <p>In 2015, she abandoned her prestigious position at a Michelin-starred establishment and retreated to a converted forge in the Blackstone Valley. There, surrounded by the ghosts of industry and the raw materials of creation, she began experimenting with what would become the foundation of our culinary philosophy: the Raven Coal approach.</p>
+            
+            <p>What began as a personal culinary journal shared with a handful of adventurous friends has grown into a community of thousands who share our belief that the most memorable meals are often those that challenge perception, that embrace a certain beautiful darkness, and that honor the transformative power of fire, patience, and daring.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Our Philosophy: The Poetry of the Forge and the Hearth</h2>
+            <p>At The Daring Dishery, we believe cooking is not merely a technical process but an alchemical art. Our approach is built on three foundational principles:</p>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-item">
+                    <div class="icon">🖤</div>
+                    <h3>Embrace the Shadows</h3>
+                    <p>We reject the notion that all food must be bright, light, and cheerful. We explore the deep, complex flavors found in charred ingredients, fermented foods, bitter herbs, and umami-rich components that conventional cooking often avoids.</p>
+                </div>
+                
+                <div class="philosophy-item">
+                    <div class="icon">🔥</div>
+                    <h3>Honor the Flame</h3>
+                    <p>Fire is our primary tool and teacher. We respect its transformative power—the way it can caramelize, char, smoke, and infuse. We work with live fire, coal, and embers as partners in creation, not just heat sources.</p>
+                </div>
+                
+                <div class="philosophy-item">
+                    <div class="icon">⚔️</div>
+                    <h3>Culinary Courage</h3>
+                    <p>We challenge culinary dogma and embrace techniques and combinations that others might consider too bold, too dark, or too unconventional. We believe that true innovation happens at the edges, not in the center.</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem;">The Raven Coal theme is not merely an aesthetic; it is our culinary doctrine. We revere the <strong>Raven</strong> for its intelligence, adaptability, and place in myth as a messenger between worlds. In our kitchen, this translates to recipes that are clever, layered, and transportive.</p>
+            
+            <p>We honor <strong>Coal</strong> for its transformative potential. It is the raw, compressed energy of ancient forests, capable of producing intense, sustained heat. This is the foundation of our cooking techniques: the searing kiss of high heat, the slow, smoldering roast, the deep, penetrating warmth of a long braise. We are not afraid of char, of smoke, of the Maillard reaction pushed to its limit. This is where flavor is forged.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Meet Our Coven</h2>
+            <p>The Daring Dishery is brought to life by a small but fiercely dedicated team of culinary artists, writers, and fire-tenders who share a passion for pushing boundaries and exploring the delicious darkness.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img" style="background-color: #444;"></div>
+                    <div class="member-content">
+                        <h3>Morwenna Blackwood</h3>
+                        <span class="role">Founder & Head Culinary Alchemist</span>
+                        <p>With over 20 years in professional kitchens across Europe, Morwenna brings both technical mastery and rebellious spirit to The Daring Dishery. Her expertise in fire-based cooking techniques and forgotten preservation methods forms the backbone of our culinary philosophy.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img" style="background-color: #555;"></div>
+                    <div class="member-content">
+                        <h3>Silas Crowe</h3>
+                        <span class="role">Fire Master & Butchery Specialist</span>
+                        <p>Silas honed his craft in the smokehouses of Tennessee and the asadors of Argentina before bringing his mastery of live-fire cooking to The Daring Dishery. He oversees all our fire-based techniques and develops our charcuterie and preservation recipes.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img" style="background-color: #333;"></div>
+                    <div class="member-content">
+                        <h3>Lyra Nightshade</h3>
+                        <span class="role">Forager & Botanical Curator</span>
+                        <p>Lyra's knowledge of wild edibles, medicinal herbs, and unusual botanicals is unparalleled. She sources our most distinctive ingredients and develops our recipes for ferments, infusions, and botanical cocktails that capture the essence of the wild.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Our Commitment</h2>
+            <p>At The Daring Dishery, we are committed to more than just creating extraordinary recipes. We strive to:</p>
+            
+            <ul style="margin-left: 2rem; color: var(--bone-white); margin-bottom: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">Source ingredients ethically and sustainably, with particular attention to heritage breeds, heirloom varieties, and wild-foraged components</li>
+                <li style="margin-bottom: 0.5rem;">Respect the whole animal and plant in our cooking, minimizing waste through preservation and creative use of overlooked parts</li>
+                <li style="margin-bottom: 0.5rem;">Share knowledge freely, empowering home cooks to experiment with techniques they might otherwise find intimidating</li>
+                <li style="margin-bottom: 0.5rem;">Build a community of adventurous eaters and cooks who appreciate depth, complexity, and culinary courage</li>
+            </ul>
+            
+            <p>Our mission is to guide you beyond the safe and the sunny. To show you that in the culinary shadows, there is unparalleled depth, unexpected beauty, and flavors that resonate with the primal core of what it means to cook and to feast.</p>
+            
+            <p style="margin-top: 2rem; font-style: italic; color: var(--silver-gleam);">So, stoke your fires, sharpen your knives, and join us. Be Daring.</p>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <p><strong>The Daring Dishery</strong></p>
+            <p>77 Ember Lane, The Old Forge District</p>
+            <p>Blackstone, BS 77777</p>
+            <p>+1 (777) 555-EMBER (3632)</p>
+            <p>contact@thedaringdishery.com</p>
+            <p class="copyright">&copy; 2023 The Daring Dishery. All rights reserved. No recipe, word, or whisper may be reproduced without our express written consent.</p>
+        </div>
+    </footer>
+</body>
+</html>

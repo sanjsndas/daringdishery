@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | The Daring Dishery</title>
+    <style>
+        :root {
+            --raven-black: #1a1a1a;
+            --coal-dark: #2b2b2b;
+            --ember-orange: #cc5500;
+            --ash-gray: #8a8a8a;
+            --bone-white: #f0f0f0;
+            --silver-gleam: #c0c0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Garamond', 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: var(--raven-black);
+            color: var(--bone-white);
+            line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0,0 Q50,10 100,0 T100,100 Q50,90 0,100 T0,0 Z" fill="%232b2b2b" opacity="0.5"/></svg>');
+        }
+
+        header {
+            background: linear-gradient(to bottom, var(--raven-black), var(--coal-dark));
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 3px solid var(--ember-orange);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .logo h1 {
+            font-size: 4rem;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            color: var(--bone-white);
+            text-shadow: 2px 2px 4px #000, 0 0 10px var(--ember-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .logo .tagline {
+            font-style: italic;
+            color: var(--ash-gray);
+            font-size: 1.2rem;
+            letter-spacing: 0.1rem;
+        }
+
+        nav {
+            background-color: var(--coal-dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--ember-orange);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0 2rem;
+        }
+
+        nav a {
+            color: var(--silver-gleam);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--ember-orange);
+            border-bottom: 2px solid var(--ember-orange);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: rgba(43, 43, 43, 0.8);
+            border-radius: 5px;
+            border-left: 4px solid var(--ember-orange);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--silver-gleam);
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--ash-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            background-color: var(--coal-dark);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-section h2 {
+            color: var(--ember-orange);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--ash-gray);
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section h3 {
+            color: var(--silver-gleam);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.3rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            color: var(--bone-white);
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.7rem;
+            color: var(--bone-white);
+        }
+
+        .highlight-box {
+            background-color: rgba(204, 85, 0, 0.1);
+            border-left: 4px solid var(--ember-orange);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-style: italic;
+            color: var(--silver-gleam);
+        }
+
+        footer {
+            background-color: var(--coal-dark);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--ember-orange);
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            color: var(--ash-gray);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--ash-gray);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .logo h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>The Daring Dishery</h1>
+            <p class="tagline">Culinary Alchemy Forged in Shadow and Flame</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms Of Service</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h1>Terms of Service</h1>
+            <p>Welcome to The Daring Dishery. By accessing and using our website, you agree to be bound by these Terms of Service. Please read them carefully.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using The Daring Dishery website (hereinafter referred to as "the Site"), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service, our Privacy Policy, and our Cookies Policy. If you do not agree with any part of these terms, you must not use our Site.</p>
+            
+            <div class="highlight-box">
+                <p>These terms constitute a binding agreement between you and The Daring Dishery. Your continued use of the Site signifies your ongoing acceptance of these terms.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>2. Use of Content</h2>
+            <p>All content on this Site, including but not limited to recipes, text, graphics, logos, images, and the overall design, is the property of The Daring Dishery and is protected by copyright and other intellectual property laws.</p>
+            
+            <h3>2.1 Permitted Uses</h3>
+            <p>You may:</p>
+            <ul>
+                <li>View and display the content on your personal devices</li>
+                <li>Print reasonable portions of recipes for personal, non-commercial use</li>
+                <li>Share links to our content through social media platforms</li>
+            </ul>
+            
+            <h3>2.2 Prohibited Uses</h3>
+            <p>You may not:</p>
+            <ul>
+                <li>Republish, redistribute, or resell any content from this Site without our express written permission</li>
+                <li>Use our content for commercial purposes</li>
+                <li>Modify, adapt, or create derivative works based on our content</li>
+                <li>Systematically scrape or harvest content from our Site</li>
+                <li>Use our recipes in commercial cooking establishments without proper licensing</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>3. User Accounts</h2>
+            <p>Certain features of our Site may require you to create a user account. When creating an account, you agree to:</p>
+            <ul>
+                <li>Provide accurate, current, and complete information</li>
+                <li>Maintain the security of your password</li>
+                <li>Accept responsibility for all activities that occur under your account</li>
+                <li>Notify us immediately of any unauthorized use of your account</li>
+            </ul>
+            
+            <p>We reserve the right to suspend or terminate accounts that violate these terms or are used for inappropriate activities.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>4. User-Generated Content</h2>
+            <p>Our Site may allow you to post comments, reviews, photos, or other content. By submitting user-generated content, you grant The Daring Dishery a perpetual, royalty-free, worldwide license to use, modify, display, and distribute that content.</p>
+            
+            <p>You agree that you will not post content that:</p>
+            <ul>
+                <li>Is unlawful, threatening, abusive, harassing, defamatory, or otherwise objectionable</li>
+                <li>Infringes upon the intellectual property rights of others</li>
+                <li>Contains viruses or other malicious code</li>
+                <li>Constitutes unsolicited commercial content (spam)</li>
+            </ul>
+            
+            <p>We reserve the right to remove any user-generated content at our sole discretion.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>5. Disclaimers</h2>
+            <h3>5.1 Recipe Accuracy and Safety</h3>
+            <p>While we strive for accuracy in our recipes, cooking results may vary based on ingredients, equipment, and technique. You are responsible for ensuring that you:</p>
+            <ul>
+                <li>Follow proper food safety practices</li>
+                <li>Check for potential allergens</li>
+                <li>Use appropriate kitchen safety measures</li>
+                <li>Verify cooking temperatures for food safety</li>
+            </ul>
+            
+            <h3>5.2 Nutritional Information</h3>
+            <p>Nutritional information provided on our Site is for informational purposes only and should not be considered medical advice. We do not guarantee the accuracy of nutritional information, and you should consult with a qualified healthcare professional for specific dietary needs.</p>
+            
+            <h3>5.3 General Disclaimer</h3>
+            <p>The Daring Dishery provides content "as is" without warranties of any kind, either express or implied. We do not warrant that the Site will be uninterrupted or error-free.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>6. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by law, The Daring Dishery shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from:</p>
+            <ul>
+                <li>Your use or inability to use the Site</li>
+                <li>Any errors or omissions in the content</li>
+                <li>Any unauthorized access to or use of our servers</li>
+                <li>Any interruption or cessation of transmission to or from our Site</li>
+                <li>Any bugs, viruses, or other malicious code that may be transmitted through our Site</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>7. Third-Party Links</h2>
+            <p>Our Site may contain links to third-party websites or services that are not owned or controlled by The Daring Dishery. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.</p>
+            
+            <p>You acknowledge and agree that The Daring Dishery shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of any such content, goods, or services available on or through any such websites or services.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>8. Indemnification</h2>
+            <p>You agree to defend, indemnify, and hold harmless The Daring Dishery and its affiliates, officers, directors, employees, and agents from and against any claims, damages, obligations, losses, liabilities, costs, or debt, and expenses (including but not limited to attorney's fees) arising from:</p>
+            <ul>
+                <li>Your use of and access to the Site</li>
+                <li>Your violation of any term of these Terms of Service</li>
+                <li>Your violation of any third-party right, including any copyright, property, or privacy right</li>
+                <li>Any claim that your user-generated content caused damage to a third party</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>9. Modifications to Terms</h2>
+            <p>We reserve the right, at our sole discretion, to modify or replace these Terms of Service at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+            
+            <p>By continuing to access or use our Site after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you must stop using the Site.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>10. Governing Law</h2>
+            <p>These Terms of Service shall be governed and construed in accordance with the laws of the jurisdiction where The Daring Dishery is based, without regard to its conflict of law provisions.</p>
+            
+            <p>Any legal suit, action, or proceeding arising out of, or related to, these Terms of Service or the Site shall be instituted exclusively in the courts of that jurisdiction.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>11. Contact Information</h2>
+            <p>If you have any questions about these Terms of Service, please contact us at:</p>
+            <p><strong>The Daring Dishery</strong><br>
+            77 Ember Lane, The Old Forge District<br>
+            Blackstone, BS 77777<br>
+            +1 (777) 555-EMBER (3632)<br>
+            legal@thedaringdishery.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>The Daring Dishery</strong></p>
+            <p>77 Ember Lane, The Old Forge District</p>
+            <p>Blackstone, BS 77777</p>
+            <p>+1 (777) 555-EMBER (3632)</p>
+            <p>contact@thedaringdishery.com</p>
+            <p class="copyright">&copy; 2023 The Daring Dishery. All rights reserved. No recipe, word, or whisper may be reproduced without our express written consent.</p>
+        </div>
+    </footer>
+</body>
+</html>

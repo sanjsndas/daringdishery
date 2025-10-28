@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daring Dishery | A Raven Coal Culinary Chronicle</title>
+    <style>
+        :root {
+            --raven-black: #1a1a1a;
+            --coal-dark: #2b2b2b;
+            --ember-orange: #cc5500;
+            --ash-gray: #8a8a8a;
+            --bone-white: #f0f0f0;
+            --silver-gleam: #c0c0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Garamond', 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: var(--raven-black);
+            color: var(--bone-white);
+            line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0,0 Q50,10 100,0 T100,100 Q50,90 0,100 T0,0 Z" fill="%232b2b2b" opacity="0.5"/></svg>');
+        }
+
+        header {
+            background: linear-gradient(to bottom, var(--raven-black), var(--coal-dark));
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 3px solid var(--ember-orange);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .logo h1 {
+            font-size: 4rem;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            color: var(--bone-white);
+            text-shadow: 2px 2px 4px #000, 0 0 10px var(--ember-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .logo .tagline {
+            font-style: italic;
+            color: var(--ash-gray);
+            font-size: 1.2rem;
+            letter-spacing: 0.1rem;
+        }
+
+        nav {
+            background-color: var(--coal-dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--ember-orange);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0 2rem;
+        }
+
+        nav a {
+            color: var(--silver-gleam);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--ember-orange);
+            border-bottom: 2px solid var(--ember-orange);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background-color: rgba(43, 43, 43, 0.8);
+            border-radius: 5px;
+            border-left: 4px solid var(--ember-orange);
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--silver-gleam);
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--ash-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .featured-recipe {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 5rem;
+            align-items: center;
+            background-color: var(--coal-dark);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .recipe-image {
+            width: 100%;
+            border-radius: 5px;
+            border: 2px solid var(--ash-gray);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .recipe-image:hover {
+            transform: scale(1.02);
+        }
+
+        .recipe-content h2 {
+            font-size: 2.2rem;
+            color: var(--ember-orange);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--ash-gray);
+            padding-bottom: 0.5rem;
+        }
+
+        .recipe-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--ash-gray);
+            font-size: 0.9rem;
+        }
+
+        .ingredients, .instructions {
+            margin-bottom: 2rem;
+        }
+
+        .ingredients h3, .instructions h3 {
+            color: var(--silver-gleam);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .ingredients ul, .instructions ol {
+            margin-left: 1.5rem;
+            color: var(--bone-white);
+        }
+
+        .ingredients li, .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .recipe-card {
+            background-color: var(--coal-dark);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--ember-orange);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            color: var(--ember-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content p {
+            color: var(--ash-gray);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background-color: var(--coal-dark);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--ember-orange);
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            color: var(--ash-gray);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--ash-gray);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>The Daring Dishery</h1>
+            <p class="tagline">Culinary Alchemy Forged in Shadow and Flame</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms Of Service</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="intro" id="home">
+            <h2>Welcome to the Hearth of the Unconventional</h2>
+            <p>Here at The Daring Dishery, we do not shy away from the dark, the deep, the smoldering, and the profound. Our recipes are not mere instructions; they are incantations. They call upon the primal essence of ingredients, transforming the humble into the sublime through techniques that honor the old ways—the sear of a cast-iron skillet, the slow, patient embrace of a coal-fired oven, the transformative power of smoke and spice. This is not just cooking; it is a rite. Prepare to get your hands dirty, to awaken your senses, and to dine with daring.</p>
+        </section>
+
+        <section class="featured-recipe" id="recipes">
+            <div>
+                <img src="https://images.unsplash.com/photo-1559314809-0f155186bb2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="A dark, rich stew in a black pottery bowl" class="recipe-image">
+            </div>
+            <div class="recipe-content">
+                <h2>Raven's Obsidian Beef Stew</h2>
+                <div class="recipe-meta">
+                    <span><strong>Prep Time:</strong> 45 minutes</span>
+                    <span><strong>Cook Time:</strong> 3 hours</span>
+                    <span><strong>Serves:</strong> 6-8</span>
+                </div>
+                <p>A stew as dark and deep as a moonless midnight. This is not a gentle, comforting dish; it is a statement. The beef is seared until it forms a crust darker than jet, then slow-braised in a broth infused with stout, black garlic, and a whisper of star anise until it becomes impossibly tender. The result is a complex, umami-rich masterpiece that lingers on the palate like a haunting memory.</p>
+
+                <div class="ingredients">
+                    <h3>Ingredients</h3>
+                    <ul>
+                        <li>3 lbs beef chuck, cut into 2-inch cubes</li>
+                        <li>3 tbsp rendered bacon fat or high-heat oil</li>
+                        <li>2 large onions, diced into obsidian-sized chunks</li>
+                        <li>4 cloves black garlic, minced</li>
+                        <li>6 cloves regular garlic, crushed</li>
+                        <li>1/4 cup tomato paste</li>
+                        <li>1 bottle (12 oz) stout beer</li>
+                        <li>4 cups rich beef stock, as dark as possible</li>
+                        <li>2 tbsp Worcestershire sauce</li>
+                        <li>2 bay leaves</li>
+                        <li>1 whole star anise</li>
+                        <li>1 tsp black peppercorns, cracked</li>
+                        <li>3 large carrots, cut into thick rounds</li>
+                        <li>2 parsnips, cut into chunks</li>
+                        <li>1 lb small potatoes, such as fingerlings, halved</li>
+                        <li>Salt, to taste</li>
+                        <li>1/4 cup chopped fresh parsley, for garnish</li>
+                    </ul>
+                </div>
+
+                <div class="instructions">
+                    <h3>Instructions</h3>
+                    <ol>
+                        <li><strong>The Sear of Midnight:</strong> Pat the beef cubes completely dry with paper towels. This is crucial for a proper sear, not a steam. Season aggressively with salt. In a large, heavy-bottomed Dutch oven (cast iron is ideal), heat the bacon fat over high heat until it shimmers. Working in batches to avoid crowding, sear the beef on all sides until a deep, dark, nearly black crust forms. Do not rush this step. This is where the stew's soul is born. Transfer the seared beef to a plate.</li>
+                        <li><strong>Building the Base:</strong> Reduce the heat to medium. Add the onions and cook until they soften and begin to take on a bit of color at the edges, about 8-10 minutes. Add the black garlic and regular garlic and cook for one more minute until fragrant.</li>
+                        <li><strong>The Alchemical Paste:</strong> Push the onions to the side and add the tomato paste to the center of the pot. Let it cook, stirring in its own spot, for 2-3 minutes until it darkens slightly and its aroma sweetens. This deepens its flavor immensely.</li>
+                        <li><strong>Deglaze with Darkness:</strong> Pour in the stout beer, scraping the bottom of the pot with a wooden spoon to release all the flavorful, darkened bits (the fond). This is liquid gold. Let it simmer for a few minutes, reducing slightly.</li>
+                        <li><strong>The Long Simmer:</strong> Return the seared beef and any accumulated juices to the pot. Add the beef stock, Worcestershire sauce, bay leaves, star anise, and cracked peppercorns. Bring to a very gentle simmer. Partially cover the pot and let it cook on the lowest possible heat for 2 to 2.5 hours, or until the beef is fork-tender.</li>
+                        <li><strong>Adding the Earth:</strong> Add the carrots, parsnips, and potatoes to the stew. Continue to simmer, partially covered, for another 30-45 minutes, or until the vegetables are tender but not mushy.</li>
+                        <li><strong>Final Rites:</strong> Remove the bay leaves and star anise. Taste and adjust seasoning with salt. The stew should be deeply savory, rich, and complex. For a thicker consistency, you can mash a few of the potatoes against the side of the pot or let it simmer uncovered for the last 15 minutes.</li>
+                        <li><strong>To Serve:</strong> Ladle the obsidian-dark stew into deep bowls. Garnish with a sprinkle of fresh parsley to offer a glimpse of light against the darkness. Serve with crusty, dense bread for dipping.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <h2 style="text-align: center; color: var(--silver-gleam); margin-bottom: 2rem;">More Shadows from the Larder</h2>
+        <section class="recipe-grid">
+            <article class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Charcoal-Charred Rack of Lamb" class="card-img">
+                <div class="card-content">
+                    <h3>Charcoal-Charred Rack of Lamb with a Blackberry & Black Pepper Glaze</h3>
+                    <p>The fierce heat of the charcoal kisses the lamb, creating a crust that crackles with flavor, while a glaze of tart blackberry and pungent black pepper cuts through the richness.</p>
+                </div>
+            </article>
+            <article class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Midnight Forest Mushroom & Truffle Risotto" class="card-img">
+                <div class="card-content">
+                    <h3>Midnight Forest Mushroom & Truffle Risotto</h3>
+                    <p>A creamy, decadent risotto the color of wet earth, packed with an assortment of wild mushrooms and finished with a drizzle of black truffle oil. Earthy, luxurious, and deeply comforting.</p>
+                </div>
+            </article>
+            <article class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Squid Ink Pasta with Calamari" class="card-img">
+                <div class="card-content">
+                    <h3>Squid Ink Pasta with Calamari, Chili, and Toasted Breadcrumbs</h3>
+                    <p>Jet-black pasta, dramatic and briny, tossed with tender rings of calamari, a kick of chili flake, and the textural contrast of golden, garlicky breadcrumbs.</p>
+                </div>
+            </article>
+            <article class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dark Chocolate & Smoked Salt Tart" class="card-img">
+                <div class="card-content">
+                    <h3>Dark Chocolate & Smoked Salt Tart</h3>
+                    <p>A decadent, bittersweet chocolate tart with a whisper of smoke and a sprinkle of flaky sea salt. The perfect ending to any daring meal.</p>
+                </div>
+            </article>
+            <article class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Smoked Old Fashioned Cocktail" class="card-img">
+                <div class="card-content">
+                    <h3>Smoked Old Fashioned</h3>
+                    <p>A classic cocktail transformed with the essence of smoldering oak. Bourbon, bitters, and a hint of smoke create a drink as complex as our cuisine.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="intro" id="about" style="margin-top: 5rem;">
+            <h2>Our Philosophy: The Poetry of the Forge and the Hearth</h2>
+            <p>The Daring Dishery was conceived not in a brightly lit test kitchen, but in the liminal space between shadow and flame. We believe that the most memorable culinary experiences are often those that challenge perception, that embrace a certain beautiful darkness. The Raven Coal theme is not merely an aesthetic; it is our culinary doctrine.</p>
+            <p>We revere the <strong>Raven</strong> for its intelligence, its adaptability, and its place in myth as a messenger between worlds. In our kitchen, this translates to recipes that are clever, layered, and transportive. We seek out unique ingredients and combinations that speak of forgotten lore and wild landscapes.</p>
+            <p>We honor <strong>Coal</strong> for its transformative potential. It is the raw, compressed energy of ancient forests, capable of producing intense, sustained heat. This is the foundation of our cooking techniques: the searing kiss of high heat, the slow, smoldering roast, the deep, penetrating warmth of a long braise. We are not afraid of char, of smoke, of the Maillard reaction pushed to its limit. This is where flavor is forged.</p>
+            <p>Our mission is to guide you beyond the safe and the sunny. To show you that in the culinary shadows, there is unparalleled depth, unexpected beauty, and flavors that resonate with the primal core of what it means to cook and to feast. So, stoke your fires, sharpen your knives, and join us. Be Daring.</p>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <p><strong>The Daring Dishery</strong></p>
+            <p>77 Ember Lane, The Old Forge District</p>
+            <p>Blackstone, BS 77777</p>
+            <p>+1 (777) 555-EMBER (3632)</p>
+            <p>contact@thedaringdishery.com</p>
+            <p class="copyright">&copy; 2023 The Daring Dishery. All rights reserved. No recipe, word, or whisper may be reproduced without our express written consent.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Policy | The Daring Dishery | A Raven Coal Culinary Chronicle</title>
+    <style>
+        :root {
+            --raven-black: #1a1a1a;
+            --coal-dark: #2b2b2b;
+            --ember-orange: #cc5500;
+            --ash-gray: #8a8a8a;
+            --bone-white: #f0f0f0;
+            --silver-gleam: #c0c0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Garamond', 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: var(--raven-black);
+            color: var(--bone-white);
+            line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0,0 Q50,10 100,0 T100,100 Q50,90 0,100 T0,0 Z" fill="%232b2b2b" opacity="0.5"/></svg>');
+        }
+
+        header {
+            background: linear-gradient(to bottom, var(--raven-black), var(--coal-dark));
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 3px solid var(--ember-orange);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .logo h1 {
+            font-size: 4rem;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            color: var(--bone-white);
+            text-shadow: 2px 2px 4px #000, 0 0 10px var(--ember-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .logo .tagline {
+            font-style: italic;
+            color: var(--ash-gray);
+            font-size: 1.2rem;
+            letter-spacing: 0.1rem;
+        }
+
+        nav {
+            background-color: var(--coal-dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--ember-orange);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0 2rem;
+        }
+
+        nav a {
+            color: var(--silver-gleam);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--ember-orange);
+            border-bottom: 2px solid var(--ember-orange);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background-color: rgba(43, 43, 43, 0.8);
+            border-radius: 5px;
+            border-left: 4px solid var(--ember-orange);
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--silver-gleam);
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--ash-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .policy-container {
+            background-color: var(--coal-dark);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 5rem;
+        }
+
+        .policy-section {
+            margin-bottom: 3rem;
+        }
+
+        .policy-section h2 {
+            font-size: 2.2rem;
+            color: var(--ember-orange);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--ash-gray);
+            padding-bottom: 0.5rem;
+        }
+
+        .policy-section h3 {
+            font-size: 1.8rem;
+            color: var(--silver-gleam);
+            margin: 2rem 0 1rem;
+        }
+
+        .policy-section p {
+            margin-bottom: 1.5rem;
+            color: var(--bone-white);
+            line-height: 1.8;
+        }
+
+        .policy-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-section li {
+            margin-bottom: 0.8rem;
+            color: var(--bone-white);
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        .cookie-table th {
+            background-color: var(--raven-black);
+            color: var(--ember-orange);
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid var(--ash-gray);
+        }
+
+        .cookie-table td {
+            padding: 1rem;
+            border: 1px solid var(--ash-gray);
+            color: var(--bone-white);
+        }
+
+        .cookie-table tr:nth-child(even) {
+            background-color: rgba(26, 26, 26, 0.5);
+        }
+
+        .controls {
+            background-color: var(--raven-black);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            border: 1px solid var(--ember-orange);
+        }
+
+        .controls h3 {
+            color: var(--ember-orange);
+            margin-bottom: 1.5rem;
+        }
+
+        .control-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .control-option {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .control-option label {
+            display: flex;
+            align-items: center;
+            color: var(--bone-white);
+            cursor: pointer;
+        }
+
+        .control-option input[type="checkbox"] {
+            margin-right: 0.8rem;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--ember-orange);
+        }
+
+        .save-btn {
+            background-color: var(--ember-orange);
+            color: var(--bone-white);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .save-btn:hover {
+            background-color: #e65c00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: var(--coal-dark);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--ember-orange);
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            color: var(--ash-gray);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--ash-gray);
+        }
+
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 2rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav li {
+                margin: 0.5rem;
+            }
+            
+            .cookie-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>The Daring Dishery</h1>
+            <p class="tagline">Culinary Alchemy Forged in Shadow and Flame</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms Of Service</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="intro">
+            <h2>Cookies Policy</h2>
+            <p>At The Daring Dishery, we use cookies to enhance your culinary journey through our digital hearth. This policy explains what cookies are, how we use them, and how you can manage your preferences.</p>
+        </section>
+
+        <div class="policy-container">
+            <div class="policy-section">
+                <h2>What Are Cookies?</h2>
+                <p>Cookies are small text files that are placed on your device when you visit our website. Like the subtle flavors in a complex dish, they work in the background to enhance your experience, remember your preferences, and help us understand how visitors interact with our content.</p>
+                
+                <p>These digital morsels are not culinary in nature, but they do help us serve you better by remembering your tastes and preferences as you explore our recipes and stories.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>How We Use Cookies</h2>
+                <p>At The Daring Dishery, we use cookies for several purposes:</p>
+                
+                <ul>
+                    <li><strong>Essential Cookies:</strong> These are necessary for the website to function properly, like remembering items in your shopping cart or ensuring secure login.</li>
+                    <li><strong>Performance Cookies:</strong> These help us understand how visitors interact with our website, which pages are most popular, and if users encounter any errors.</li>
+                    <li><strong>Functionality Cookies:</strong> These remember your preferences, such as your preferred language, region, or dietary restrictions you've indicated.</li>
+                    <li><strong>Targeting/Advertising Cookies:</strong> These are used to deliver ads relevant to your interests, both on and off our website.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2>Types of Cookies We Use</h2>
+                
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th>Cookie Type</th>
+                            <th>Purpose</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Session Cookies</td>
+                            <td>To keep you logged in during your visit and maintain your preferences throughout your session</td>
+                            <td>Session</td>
+                        </tr>
+                        <tr>
+                            <td>Authentication Cookies</td>
+                            <td>To identify you when you log into your account and ensure your data remains secure</td>
+                            <td>Persistent (up to 30 days)</td>
+                        </tr>
+                        <tr>
+                            <td>Preference Cookies</td>
+                            <td>To remember your culinary preferences, dietary restrictions, and display settings</td>
+                            <td>Persistent (up to 1 year)</td>
+                        </tr>
+                        <tr>
+                            <td>Analytics Cookies</td>
+                            <td>To help us understand how visitors use our site and improve our content and user experience</td>
+                            <td>Persistent (up to 2 years)</td>
+                        </tr>
+                        <tr>
+                            <td>Marketing Cookies</td>
+                            <td>To deliver personalized culinary content and recommendations based on your interests</td>
+                            <td>Persistent (up to 1 year)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="policy-section">
+                <h2>Third-Party Cookies</h2>
+                <p>In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the website, deliver advertisements on and through the website, and so on. These may include:</p>
+                
+                <ul>
+                    <li>Google Analytics for understanding how our website is used</li>
+                    <li>Social media platforms for sharing content</li>
+                    <li>Advertising networks to deliver relevant culinary content</li>
+                </ul>
+                
+                <p>These third-party services have their own privacy policies and cookie policies, which we encourage you to review.</p>
+            </div>
+
+            <div class="controls">
+                <h3>Manage Your Cookie Preferences</h3>
+                <p>You have control over which cookies you accept. Essential cookies cannot be disabled as they are necessary for the website to function, but you can choose to disable other categories.</p>
+                
+                <div class="control-options">
+                    <div class="control-option">
+                        <label>
+                            <input type="checkbox" id="essential" checked disabled>
+                            <span>Essential Cookies</span>
+                        </label>
+                        <p style="font-size: 0.9rem; color: var(--ash-gray); margin-top: 0.5rem;">Required for the website to function</p>
+                    </div>
+                    
+                    <div class="control-option">
+                        <label>
+                            <input type="checkbox" id="performance" checked>
+                            <span>Performance Cookies</span>
+                        </label>
+                        <p style="font-size: 0.9rem; color: var(--ash-gray); margin-top: 0.5rem;">Help us improve our website</p>
+                    </div>
+                    
+                    <div class="control-option">
+                        <label>
+                            <input type="checkbox" id="functionality" checked>
+                            <span>Functionality Cookies</span>
+                        </label>
+                        <p style="font-size: 0.9rem; color: var(--ash-gray); margin-top: 0.5rem;">Remember your preferences</p>
+                    </div>
+                    
+                    <div class="control-option">
+                        <label>
+                            <input type="checkbox" id="targeting" checked>
+                            <span>Targeting Cookies</span>
+                        </label>
+                        <p style="font-size: 0.9rem; color: var(--ash-gray); margin-top: 0.5rem;">Personalize your experience</p>
+                    </div>
+                </div>
+                
+                <button class="save-btn" id="savePreferences">Save Preferences</button>
+            </div>
+
+            <div class="policy-section">
+                <h2>Managing Cookies in Your Browser</h2>
+                <p>You can also manage cookies through your browser settings. Most browsers allow you to refuse to accept cookies and to delete cookies. The methods for doing so vary from browser to browser, and from version to version.</p>
+                
+                <p>Please note that blocking all cookies may have a negative impact upon the usability of many websites, including ours, as some features may not work properly without cookies.</p>
+                
+                <p>For more information about how to manage cookies in your specific browser, you can consult your browser's help documentation.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>Updates to This Policy</h2>
+                <p>We may update this Cookies Policy from time to time to reflect changes in technology, legislation, or our operations. We will post any changes on this page and, where appropriate, notify you by email or through our website.</p>
+                
+                <p>This policy was last updated on October 28, 2023.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2>Contact Us</h2>
+                <p>If you have any questions about our use of cookies, please contact us at:</p>
+                <p><strong>Email:</strong> privacy@thedaringdishery.com</p>
+                <p><strong>Address:</strong> 77 Ember Lane, The Old Forge District, Blackstone, BS 77777</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>The Daring Dishery</strong></p>
+            <p>77 Ember Lane, The Old Forge District</p>
+            <p>Blackstone, BS 77777</p>
+            <p>+1 (777) 555-EMBER (3632)</p>
+            <p>contact@thedaringdishery.com</p>
+            <p class="copyright">&copy; 2023 The Daring Dishery. All rights reserved. No recipe, word, or whisper may be reproduced without our express written consent.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('savePreferences').addEventListener('click', function() {
+            // Get user preferences
+            const performance = document.getElementById('performance').checked;
+            const functionality = document.getElementById('functionality').checked;
+            const targeting = document.getElementById('targeting').checked;
+            
+            // In a real implementation, you would save these preferences
+            // For this example, we'll just show an alert
+            alert('Your cookie preferences have been saved. The embers of your digital hearth now burn according to your specifications.');
+            
+            // Note: In a real implementation, you would set cookies or localStorage
+            // to remember these preferences and adjust cookie usage accordingly
+        });
+    </script>
+</body>
+</html>

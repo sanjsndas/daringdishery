@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | The Daring Dishery | A Raven Coal Culinary Chronicle</title>
+    <style>
+        :root {
+            --raven-black: #1a1a1a;
+            --coal-dark: #2b2b2b;
+            --ember-orange: #cc5500;
+            --ash-gray: #8a8a8a;
+            --bone-white: #f0f0f0;
+            --silver-gleam: #c0c0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Garamond', 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: var(--raven-black);
+            color: var(--bone-white);
+            line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0,0 Q50,10 100,0 T100,100 Q50,90 0,100 T0,0 Z" fill="%232b2b2b" opacity="0.5"/></svg>');
+        }
+
+        header {
+            background: linear-gradient(to bottom, var(--raven-black), var(--coal-dark));
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 3px solid var(--ember-orange);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .logo h1 {
+            font-size: 4rem;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            color: var(--bone-white);
+            text-shadow: 2px 2px 4px #000, 0 0 10px var(--ember-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .logo .tagline {
+            font-style: italic;
+            color: var(--ash-gray);
+            font-size: 1.2rem;
+            letter-spacing: 0.1rem;
+        }
+
+        nav {
+            background-color: var(--coal-dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--ember-orange);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0 2rem;
+        }
+
+        nav a {
+            color: var(--silver-gleam);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--ember-orange);
+            border-bottom: 2px solid var(--ember-orange);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background-color: rgba(43, 43, 43, 0.8);
+            border-radius: 5px;
+            border-left: 4px solid var(--ember-orange);
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--silver-gleam);
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--ash-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .contact-info {
+            background-color: var(--coal-dark);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-info h2 {
+            font-size: 2.2rem;
+            color: var(--ember-orange);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--ash-gray);
+            padding-bottom: 0.5rem;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 1rem;
+            color: var(--bone-white);
+        }
+
+        .contact-details strong {
+            color: var(--silver-gleam);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links h3 {
+            color: var(--silver-gleam);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--raven-black);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: var(--bone-white);
+            transition: all 0.3s ease;
+            border: 1px solid var(--ash-gray);
+        }
+
+        .social-icon:hover {
+            background-color: var(--ember-orange);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background-color: var(--coal-dark);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-form h2 {
+            font-size: 2.2rem;
+            color: var(--ember-orange);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--ash-gray);
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--silver-gleam);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--raven-black);
+            border: 1px solid var(--ash-gray);
+            border-radius: 4px;
+            color: var(--bone-white);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--ember-orange);
+            box-shadow: 0 0 5px rgba(204, 85, 0, 0.5);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--ember-orange);
+            color: var(--bone-white);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background-color: #e65c00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .map-container {
+            margin-top: 3rem;
+            background-color: var(--coal-dark);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .map-container h2 {
+            font-size: 2.2rem;
+            color: var(--ember-orange);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--ash-gray);
+            padding-bottom: 0.5rem;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: var(--raven-black);
+            border: 1px solid var(--ash-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ash-gray);
+            font-style: italic;
+        }
+
+        footer {
+            background-color: var(--coal-dark);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--ember-orange);
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            color: var(--ash-gray);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--ash-gray);
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>The Daring Dishery</h1>
+            <p class="tagline">Culinary Alchemy Forged in Shadow and Flame</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms Of Service</a></li>
+            <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="intro">
+            <h2>Forge a Connection with The Daring Dishery</h2>
+            <p>Your thoughts, questions, and culinary conundrums are the kindling for our creative fires. Whether you seek guidance on a recipe, wish to share your own daring creations, or have questions about our philosophy, we welcome your messages. We may dwell in the shadows, but our dialogue with fellow culinary adventurers burns bright.</p>
+        </section>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Find Us in the Ember Glow</h2>
+                <div class="contact-details">
+                    <p><strong>Address:</strong><br>77 Ember Lane, The Old Forge District<br>Blackstone, BS 77777</p>
+                    <p><strong>Phone:</strong><br>+1 (777) 555-EMBER (3632)</p>
+                    <p><strong>Email:</strong><br>contact@thedaringdishery.com</p>
+                    <p><strong>Hours of Operation:</strong><br>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed (for culinary rituals)</p>
+                </div>
+                
+                <div class="social-links">
+                    <h3>Follow Our Smoke Signals</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">F</a>
+                        <a href="#" class="social-icon">I</a>
+                        <a href="#" class="social-icon">T</a>
+                        <a href="#" class="social-icon">P</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send a Message Through the Flames</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a topic</option>
+                            <option value="recipe-question">Recipe Question</option>
+                            <option value="cooking-technique">Cooking Technique</option>
+                            <option value="collaboration">Collaboration Inquiry</option>
+                            <option value="feedback">Website Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Ignite the Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <h2>Our Hearth in the Old Forge District</h2>
+            <div class="map-placeholder">
+                [Interactive Map of 77 Ember Lane, The Old Forge District, Blackstone]
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>The Daring Dishery</strong></p>
+            <p>77 Ember Lane, The Old Forge District</p>
+            <p>Blackstone, BS 77777</p>
+            <p>+1 (777) 555-EMBER (3632)</p>
+            <p>contact@thedaringdishery.com</p>
+            <p class="copyright">&copy; 2023 The Daring Dishery. All rights reserved. No recipe, word, or whisper may be reproduced without our express written consent.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real implementation, you would send this data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been sent to the hearth. We will respond to your inquiry as the embers cool.`);
+            
+            // Reset the form
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+</body>
+</html>
